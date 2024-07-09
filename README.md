@@ -1,1 +1,2 @@
 # filter-VCF-matched-maternal-and-paternal
+python script bin/filter_mutect2_HC.py filters out low confidence calls from mutect2 VCF files. It runs through all lines in VCF and filters out variants with an overal DP of <10 and an alt AD of <3. It also removed any non-canonical chromosome variants and any variants which do not pass all filtermutect2 filters (i.e. only those which have a PASS flag in FILTER column). VCF file must be gunzipped before passing to script. Run with 'python3 filter_mutect2_HC.py tumour.vcf output.vcf'
